@@ -41,6 +41,11 @@
       <p>User Agent: <?php echo $_SERVER['HTTP_USER_AGENT']; ?></p>
       <p>Platform: <?php echo $bd->platform; ?></p>
       <p>Browser: <?php echo $bd->browser_name; ?></p>
+
+      <p>Browser window width: <span id="window-width"></span></p>
+      <p>Browser window height: <span id="window-height"></span></p>
+
+
       <p>Referer: <?php echo $_SERVER['HTTP_REFERER']; ?></p>
 
       <!-- date_default_timezone_get("time zone identifier") from http://php.net/manual/en/timezones.php -->
@@ -64,5 +69,14 @@
       <p>Remote Port: <?php echo $_SERVER['REMOTE_PORT']; ?></p>
       
     </div>
+
+<script>
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || document.body.offsetWidth;
+    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || document.body.offsetHeight;
+    
+    document.getElementById("window-width").innerHTML = width + "px";
+    document.getElementById("window-height").innerHTML = height + "px";
+</script>
+
   </body>
 </html>
