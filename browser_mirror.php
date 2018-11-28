@@ -30,9 +30,17 @@
   <body>
     <div id="main-content">
       <h1>Browser Mirror</h1>
+
+      <?php
+      require_once('browser_detective.php');
+      $bd = new BrowserDetective();
+      $bd->detect();
+      ?>
       
       <p>Remote IP: <?php echo $_SERVER['REMOTE_ADDR']; ?></p>
       <p>User Agent: <?php echo $_SERVER['HTTP_USER_AGENT']; ?></p>
+      <p>Platform: <?php echo $bd->platform; ?></p>
+      <p>Browser: <?php echo $bd->browser_name; ?></p>
       <p>Referer: <?php echo $_SERVER['HTTP_REFERER']; ?></p>
 
       <!-- date_default_timezone_get("time zone identifier") from http://php.net/manual/en/timezones.php -->
