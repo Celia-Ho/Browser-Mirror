@@ -19,6 +19,7 @@
     }
     #main-content p {
       font: 24px "Times New Roman", Times, Georgia, serif;
+      text-align: left; margin: 0; padding: 0;
     }
     #main-content p strong {
       font-size: 70px;
@@ -33,7 +34,17 @@
       <p>Remote IP: <?php echo $_SERVER['REMOTE_ADDR']; ?></p>
       <p>User Agent: <?php echo $_SERVER['HTTP_USER_AGENT']; ?></p>
       <p>Referer: <?php echo $_SERVER['HTTP_REFERER']; ?></p>
-      <p>Request Time: <?php echo $_SERVER['REQUEST_TIME']; ?></p>
+
+      <!-- date_default_timezone_get("time zone identifier") from http://php.net/manual/en/timezones.php -->
+
+      <p>Request Time (Unix): <?php echo $_SERVER['REQUEST_TIME']; ?></p>
+      <?php date_default_timezone_set("America/Toronto"); ?>
+
+      <!-- date function:  date($format, $timestamp) -->
+      <!-- $format = 'l, F j, Y g:ia' = Day of Week, Month Day of Month, Year Hour:Minute am/pm-->
+
+      <p>Request Time (formatted): <?php echo date('l, F j, Y g:ia', $_SERVER['REQUEST_TIME']); ?></p>
+      
       <p>Request URI: <?php echo $_SERVER['REQUEST_URI']; ?></p>
       <p>Request Method: <?php echo $_SERVER['REQUEST_METHOD']; ?></p>
       <p>Query String: <?php echo $_SERVER['QUERY_STRING']; ?></p>
