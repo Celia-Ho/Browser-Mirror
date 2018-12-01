@@ -11,7 +11,7 @@ The site also uses JavaScript to detect and display the window size in width and
 
 ## Deployment on Heroku
 
-Check it out in live action [here](https://obscure-hamlet-47289.herokuapp.com/browser_mirror.php).
+Check it out in live action [here](https://obscure-hamlet-47289.herokuapp.com).
 
 
 ## Tools/languages used:  

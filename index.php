@@ -1,3 +1,5 @@
+<!-- Browser Mirror -->
+
 <!DOCTYPE html>
 <html>
   <head>
